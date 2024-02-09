@@ -66,6 +66,8 @@ class PlayList {
 
     /** Removes the last track from this list. If the list is empty, does nothing. */
      public void removeLast() {
+
+
         
     }
     
@@ -75,7 +77,7 @@ class PlayList {
         int totalDuration = 0;
 
         for(int i =0 ; i<= this.getSize(); i++){
-            Track currentTrack = this.getTrack(i)
+            Track currentTrack = this.getTrack(i) ; 
             if(currentTrack != null){
 
                 totalDuration +=  currentTrack.getDuration();
