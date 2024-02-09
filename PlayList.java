@@ -56,7 +56,7 @@ class PlayList {
     public String toString() {
 
          String result = "";
-         for(int i =0 ; i < this.getSize(); i++){
+         for(int i =0 ; i< this.getSize(); i++){
             result = result + this.getTrack(i).toString() + "\n" ; 
 
 
@@ -75,7 +75,13 @@ class PlayList {
         int totalDuration = 0;
 
         for(int i =0 ; i<= this.getSize(); i++){
-            totalDuration = totalDuration +  this.getTrack(i).getDuration();
+            Track currentTrack = this.getTrack(i)
+            if(currentTrack != null){
+
+                totalDuration +=  currentTrack.getDuration();
+
+            }
+            
         }
 
 
