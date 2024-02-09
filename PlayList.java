@@ -54,19 +54,31 @@ class PlayList {
     /** Returns the data of this list, as a string. Each track appears in a separate line. */
     //// For an efficient implementation, use StringBuilder.
     public String toString() {
-        //// replace the following statement with your code
-        return "";
+
+         String result = "";
+         for(int i =0 ; i<= this.getSize(); i++){
+            result = result + this.getTrack(i).toString() + "\n" ; 
+
+
+       }
+        return result; 
     }
 
     /** Removes the last track from this list. If the list is empty, does nothing. */
      public void removeLast() {
-        //// replace this comment with your code
+        
     }
     
     /** Returns the total duration (in seconds) of all the tracks in this list.*/
     public int totalDuration() {
-        //// replace the following statement with your code
-        return 0;
+
+        int totalDuration = 0;
+        for(int i =0 ; i<= this.getSize(); i++){
+            totalDuration += this.getTrack(i).getDuration();
+        }
+
+
+        return totalDuration;
     }
 
     /** Returns the index of the track with the given title in this list.
