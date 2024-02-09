@@ -17,6 +17,8 @@ class Track {
     public String toString() {
         //// Replace the following statement with code that returns
         //// the data of this track according to the method's documentation.
+
+
         return artist + ", " + title + ", " + duration;
     }
 
@@ -42,7 +44,21 @@ class Track {
     // Returns a string that represents the totalSeconds as "minutes:seconds",
     // Where seconds is always two digits. For example, "3:17" or "12:05".
     private String formattedDuration(int totalSeconds) {
-        //// replace the following statement with your code
-        return "";
+        
+
+        int minutes = totalSeconds/60 ;
+        int seconds = totalSeconds%60 ;
+
+        String formattedDuration;
+
+        if (seconds<10){
+           formattedDuration = minutes + ":" + "0" + seconds;
+  
+        }else{
+             formattedDuration = minutes + ":" + seconds;
+
+        }
+
+        return formattedDuration;
     }
 }
