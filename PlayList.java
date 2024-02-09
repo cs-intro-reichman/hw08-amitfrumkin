@@ -68,12 +68,11 @@ class PlayList {
      public void removeLast() {
 
      if(this.getSize() > 0){
-        
+
          size-- ; 
         tracks[size] = null;
        
      }   
-
 
         
     }
@@ -100,9 +99,28 @@ class PlayList {
     /** Returns the index of the track with the given title in this list.
      *  If such a track is not found, returns -1. */
     public int indexOf(String title) {
-        //// replace the following statement with your code
+
+       int indexOfTitle = 0; 
+       String fixedTitle = title.substring(0,1).toLowerCase() + title.substring(1).toUpperCase();
+       
+
+        for(int i =0 ; i< this.getSize(); i++){
+
+            Track currentTrack = this.getTrack(i) ;
+            if (currentTrack.getTitle().equals(title)){
+                indexOfTitle = i;
+                return indexOfTitle ; 
+
+            }
+        }
+
         return -1;
     }
+    /*String fixedTitle = 
+        for(int j =0 ; j< title.length(); j++){
+            if(title.charAT(0) >= 97 && title.charAT(0) <= 122 ){
+                fixedTitle.charAT(0) = title.charAT(0) 
+            }*/
 
     /** Inserts the given track in index i of this list. For example, if the list is
      *  (t5, t3, t1), then just after add(1,t4) the list becomes (t5, t4, t3, t1).
