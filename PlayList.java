@@ -101,7 +101,7 @@ class PlayList {
     public int indexOf(String title) {
 
        int indexOfTitle = 0; 
-       String fixedTitle = title.substring(0,1).toLowerCase() + title.substring(1).toUpperCase();
+       String fixedTitle = title.substring(0,1).toUpperCase() + title.substring(1).toLowerCase();
        
 
         for(int i =0 ; i< this.getSize(); i++){
