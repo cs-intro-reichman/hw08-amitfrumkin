@@ -70,7 +70,7 @@ class PlayList {
      if(this.getSize() > 0){
 
          size-- ; 
-        tracks[size] = null;
+        tracks[this.getSize()] = null;
        
      }   
 
@@ -116,11 +116,6 @@ class PlayList {
 
         return -1;
     }
-    /*String fixedTitle = 
-        for(int j =0 ; j< title.length(); j++){
-            if(title.charAT(0) >= 97 && title.charAT(0) <= 122 ){
-                fixedTitle.charAT(0) = title.charAT(0) 
-            }*/
 
     /** Inserts the given track in index i of this list. For example, if the list is
      *  (t5, t3, t1), then just after add(1,t4) the list becomes (t5, t4, t3, t1).
@@ -129,7 +124,20 @@ class PlayList {
      *  is full, does nothing and returns false. Otherwise, inserts the track and
      *  returns true. */
     public boolean add(int i, Track track) {
-        //// replace the following statement with your code
+
+        if( i >= this.getSize()){
+            tracks[this.getSize()] = track ;
+            return true;
+        }else if(i < this.getSize()){
+             for(int j =this.getSize()-1 ; j<=i ; j--){
+                tracks[j+1]= tracks[j] ;
+             }
+             tracks[i] = track;
+             return true ; 
+        }else if(i >= this.getMaxSize()){
+            return false; 
+        }
+
         return false;
     }
      
