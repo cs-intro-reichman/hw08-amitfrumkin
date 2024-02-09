@@ -129,7 +129,7 @@ class PlayList {
             tracks[this.getSize()] = track ;
             return true;
         }else if(i < this.getSize()){
-             for(int j =this.getSize()-1 ; j<=i ; j--){
+             for(int j =this.getSize()-1 ; j >= i ; j--){
                 tracks[j+1]= tracks[j] ;
              }
              tracks[i] = track;
