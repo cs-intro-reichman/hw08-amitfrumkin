@@ -226,16 +226,34 @@ class PlayList {
     /** Returns the title of the shortest track in this list. 
      *  If the list is empty, returns null. */
     public String titleOfShortestTrack() {
-        return tracks[minIndex(0)].getTitle();
+
+        if( this.getSize() == 0){
+            return null;
+        }
+
+        int indexOfShortest = minIndex(0);
+        Track shortest = getTrack(indexOfShortest);
+        String titleOfShortestTrack = shortest.getTitle();
+
+        return titleOfShortestTrack;
     }
 
     /** Sorts this list by increasing duration order: Tracks with shorter
      *  durations will appear first. The sort is done in-place. In other words,
      *  rather than returning a new, sorted playlist, the method sorts
      *  the list on which it was called (this list). */
+     // Uses the selection sort algorithm,  
+    // calling the minIndex method in each iteration.
     public void sortedInPlace() {
-        // Uses the selection sort algorithm,  
-        // calling the minIndex method in each iteration.
-        //// replace this statement with your code
+
+        int minIndex = 0 ;
+
+        for(int i= 0; i<this.getSize(); i++){
+            minIndex = minIndex(i) ;
+            Track temp = tracks [i];
+            tracks[i]= tracks[minIndex]; 
+            tracks[minIndex] = temp;  
+        } 
+        
     }
 }
