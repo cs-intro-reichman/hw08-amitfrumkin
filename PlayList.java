@@ -192,6 +192,7 @@ class PlayList {
 
                 otherIndex++;
             }
+            size = sumSizes;
 
         }
     }
