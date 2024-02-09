@@ -127,13 +127,17 @@ class PlayList {
 
         if( i >= this.getSize()){
             tracks[this.getSize()] = track ;
+            size++;
             return true;
+            
         }else if(i < this.getSize()){
              for(int j =this.getSize()-1 ; j >= i ; j--){
                 tracks[j+1]= tracks[j] ;
              }
              tracks[i] = track;
+             size++;
              return true ; 
+             
         }else if(i >= this.getMaxSize()){
             return false; 
         }
@@ -145,7 +149,8 @@ class PlayList {
      *  If the list is empty, or the given index is negative or too big for this list, 
      *  does nothing and returns -1. */
     public void remove(int i) {
-        //// replace this comment with your code
+        
+
     }
 
     /** Removes the first track that has the given title from this list.
