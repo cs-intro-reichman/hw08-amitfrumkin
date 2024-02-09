@@ -56,7 +56,7 @@ class PlayList {
     public String toString() {
 
          String result = "";
-         for(int i =0 ; i<= this.getSize(); i++){
+         for(int i =0 ; i < this.getSize(); i++){
             result = result + this.getTrack(i).toString() + "\n" ; 
 
 
